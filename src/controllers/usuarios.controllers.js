@@ -61,7 +61,6 @@ export const eliminarUsuario = async (req, res) => {
 
 
 export const loginUsuario = async (req, res) => {
-  // TODO: buscar el usuario y devolver su JWT si existe
 
   try {
 
