@@ -4,6 +4,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 
 import { usuarioRouter } from "./routes/usuarios.routes.js";
+import { productoRouter } from "./routes/productos.routes.js";
 
 
 dotenv.config();
@@ -22,6 +23,7 @@ servidor.use(
  
   servidor.use(express.json());
   servidor.use(usuarioRouter);
+  servidor.use(productoRouter);
  
   servidor.listen(PORT, () => {
     console.log(`Servidor API corriendo exitosamente en el puerto ${PORT}`);

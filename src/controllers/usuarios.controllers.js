@@ -1,10 +1,12 @@
 import { UsuarioModel } from "../models/usuarios.model.js";
 import bcryptjs from "bcryptjs";
+import { generateRefreshToken, generateAccessToken } from '../service/usuarios.service.js';
 
 export const registroUsuario = async (req, res) => { 
   try {
-
+ 
     const data = req.body;
+    data.refreshToken = generateRefreshToken();
     await UsuarioModel.create(data);
     return res.status(201).json({
       message: "Usuario creado exitosamente",
@@ -83,6 +85,8 @@ export const loginUsuario = async (req, res) => {
           return res.status(201).json({
             status:true,
             message: "Login correcto",
+            refreshToken: usuario.refreshToken,
+            accessToken: generateAccessToken(usuario.correo, usuario.refreshToken)
           });
       } else {
         return res.status(201).json({

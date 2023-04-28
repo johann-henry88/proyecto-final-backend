@@ -20,6 +20,10 @@ const usuarioSchema = new mongoose.Schema({
     index: true,
     unique: true,
   },
+  refreshToken: {
+    type: mongoose.Schema.Types.String,
+    required: false,
+  }, 
   password: {
     type: mongoose.Schema.Types.String,
     required: true,

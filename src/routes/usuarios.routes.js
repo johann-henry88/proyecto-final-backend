@@ -3,7 +3,9 @@ import * as controller from "../controllers/usuarios.controllers.js";
 
 export const usuarioRouter = Router();
 
-usuarioRouter.post("/registro", controller.registroUsuario);
-usuarioRouter.delete("/eliminar", controller.eliminarUsuario);
-usuarioRouter.put("/actualizar", controller.actualizarUsuario);
-usuarioRouter.post("/login", controller.loginUsuario);
+usuarioRouter.post("/registrousuario", controller.registroUsuario);
+usuarioRouter.delete("/eliminarusuario", controller.eliminarUsuario);
+usuarioRouter.put("/actualizarusuario", controller.actualizarUsuario);
+usuarioRouter.post("/loginusuario", controller.loginUsuario);
+
+
